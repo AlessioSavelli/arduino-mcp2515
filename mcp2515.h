@@ -466,7 +466,9 @@ class MCP2515
         void prepareId(uint8_t *buffer, const bool ext, const uint32_t id);
     
     public:
-        MCP2515(const uint8_t _CS, const uint32_t _SPI_CLOCK = DEFAULT_SPI_CLOCK, SPIClass * _SPI = nullptr);
+        MCP2515(const uint8_t _CS, const uint32_t _SPI_CLOCK = DEFAULT_SPI_CLOCK, SPIClass *_SPI = nullptr);
+        bool begin(SPIClass *_SPI = nullptr);
+
         ERROR reset(void);
         ERROR setConfigMode();
         ERROR setListenOnlyMode();
